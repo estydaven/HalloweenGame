@@ -14,4 +14,4 @@ The game is not very difficult, I have not yet been able to solve some problems,
 
 The game is implemented in **html, css and vanilla js**.
 
-[Deploy link:]()
+[Deploy link: estydaven.github.io/HalloweenGame/](https://estydaven.github.io/HalloweenGame/)

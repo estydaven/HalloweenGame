@@ -134,8 +134,7 @@ const animateEnemies = () => {
                         level++;
                         levelElem.textContent = level;
                     }
-                    speed = speed - 20;
-                    console.log(speed);                    
+                    speed = speed - 30;                  
                 }
                 clearInterval(intervalID);
                     intervalID = setInterval(animateEnemies, speed);   
