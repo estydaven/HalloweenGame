@@ -6,11 +6,11 @@ The game is not very difficult, I have not yet been able to solve some problems,
 
 ### What has been implemented:
 
-* &#9989; Creation and movement of enemies
-* &#9989; Movement of the player's picture when pressing the up and down keys
-* &#9989; Saving the player's name and score in localStorage
-* &#9989; Musical accompaniment with the ability to pause the music
-* &#9989; Scoring and game levels
+&#9989; Creation and movement of enemies
+&#9989; Movement of the player's picture when pressing the up and down keys
+&#9989; Saving the player's name and score in localStorage
+&#9989; Musical accompaniment with the ability to pause the music
+&#9989; Scoring and game levels
 
 The game is implemented in **html, css and vanilla js**.
 
