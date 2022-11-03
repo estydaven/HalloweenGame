@@ -14,4 +14,6 @@ The game is not very difficult, I have not yet been able to solve some problems,
 
 The game is implemented in **html, css and vanilla js**.
 
+## THE GAME IS NOT FOR MOBILE DEVICES!
+
 [Deploy link: estydaven.github.io/HalloweenGame/](https://estydaven.github.io/HalloweenGame/)
