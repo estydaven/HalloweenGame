@@ -22,8 +22,9 @@ const playBtn = document.querySelector('.audio__icon');
 let isPlay = false;
 let level = 1;
 let speed = 200;
-const scoreList = [10, 11, 20, 21, 30, 31, 40, 41];
+let iterateList = [10, 20, 30, 40];
 let ratingList = [];
+let iterations= 0;
 
 function playAudio() {
     gamer.focus();
@@ -71,6 +72,15 @@ const createEnemies = () => {
 
         const index = i === 0 ? Math.round(Math.random() * 2) : Math.round(Math.random());
         enemy.style.top = startPositions.splice(index, 1);
+
+        iterations++; 
+        for (let i = 0; i < iterateList.length; i++ ) {
+            if (iterations == iterateList[i]) {
+                level++;
+                levelElem.textContent = level;
+                speed = speed - 40;             
+            } 
+        }
     }
 }
 
@@ -123,22 +133,13 @@ const animateEnemies = () => {
     if (currentLeftPosition <= -165) {
 
         enemies.forEach((el) => {
-            score += 1;
+            score++;
             el.remove();
         });
         
         if (level >= 0) {
-            for (let i = 0; i < scoreList.length; i++ ) {
-                if (score == scoreList[i]) {
-                    if (score % 2 == 0) {
-                        level++;
-                        levelElem.textContent = level;
-                    }
-                    speed = speed - 30;                  
-                }
-                clearInterval(intervalID);
-                    intervalID = setInterval(animateEnemies, speed);   
-            }
+            clearInterval(intervalID);
+            intervalID = setInterval(animateEnemies, speed);
         }
 
         scoreElem.innerText = score;
