@@ -7,6 +7,7 @@ const btnGreeting = document.querySelector('.greeting__button');
 const textDanger = document.querySelector('.danger-text');
 const startWrapper = document.querySelector('#start-btn');
 const startBtn = document.querySelector('.start-btn');
+const description = document.querySelector('.description');
 const gamer = document.querySelector('#gamer');
 const gameArea = document.querySelector('#game-area');
 const scoreArea = document.querySelector('.score-area');
@@ -96,6 +97,7 @@ const gameOver = () => {
     scoreCoverElem.classList.remove('hidden');
     wrapper.classList.remove('bg-animate');
     startBtn.classList.add('hidden');
+    description.classList.add('hidden');
     scoreArea.classList.add('hidden');    
     
     window.localStorage.setItem('score', scoreElem.innerText);
@@ -111,11 +113,13 @@ scoreCoverBtns.forEach((el) => {
     el.addEventListener('click', function() {
         if (el.classList.contains('score-cover__btn_one')) {
             greetingWindow.classList.add('hidden');
-            startBtn.classList.remove('hidden');  
+            startBtn.classList.remove('hidden'); 
+            description.classList.remove('hidden'); 
             scoreCoverElem.classList.add('hidden');          
         } 
         if (el.classList.contains('score-cover__btn_two')) {
             startBtn.classList.remove('hidden');
+            description.classList.remove('hidden'); 
             scoreCoverElem.classList.add('hidden');
             greetingWindow.classList.remove('hidden');
             greetingQuestion.classList.remove('hidden');
@@ -202,6 +206,7 @@ const turn = (event) => {
 startWrapper.addEventListener('click', () => {
     playAudio();
     startBtn.classList.add('hidden');
+    description.classList.add('hidden'); 
     scoreArea.classList.remove('hidden');
     audioWrapper.classList.remove('hidden');
     resetGame();
