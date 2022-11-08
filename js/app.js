@@ -81,7 +81,7 @@ const createEnemies = () => {
                 speed = speed - 40;             
             } 
         }
-    }
+    }    
 }
 
 const gameOver = () => {

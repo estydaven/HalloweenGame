@@ -177,10 +177,29 @@ body {
     border-radius: 8px;
 }
 .start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;   
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+.description {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.description__span {
+    color: #e34646;
+}
+.description__item {
+    padding-left: 25px;
+    background-image: url(../images/pumpkin2.png);
+    background-repeat: no-repeat;
+    background-size: 19px;
+    background-position:left top 3px;
+    margin-bottom: 10px;
 }
 .score-area, .start {
     font-size: 3rem;
