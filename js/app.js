@@ -27,8 +27,9 @@ let iterateList = [10, 20, 30, 40];
 let ratingList = [];
 let iterations= 0;
 
-function playAudio() {
+function playGameAudio() {
     gamer.focus();
+    audio.src = 'audio/audio1.mp3';
     audio.currentTime = 0;
     audio.play();
 
@@ -43,7 +44,21 @@ function playAudio() {
     }
 }
 
-playBtn.addEventListener('click', playAudio);
+playBtn.addEventListener('click', playGameAudio);
+
+function playLoosingGameAudio() {
+    audio.currentTime = 0;
+    audio.src = 'audio/titry-directed-by-fail.mp3'
+    audio.play();
+
+    if(!isPlay) {
+        audio.play();
+        isPlay = true;
+    } else {
+        audio.pause();
+        isPlay = false;
+    }
+}
 
 const hideGreetingWindow = () => {
     greetingWindow.classList.add('hidden');
@@ -106,7 +121,8 @@ const gameOver = () => {
     bestScore.textContent = maxScore;
     window.localStorage.setItem('ratingList', JSON.stringify(ratingList));
 
-    playAudio();
+    playGameAudio();
+    playLoosingGameAudio();
 }
 
 scoreCoverBtns.forEach((el) => {    
@@ -115,7 +131,8 @@ scoreCoverBtns.forEach((el) => {
             greetingWindow.classList.add('hidden');
             startBtn.classList.remove('hidden'); 
             description.classList.remove('hidden'); 
-            scoreCoverElem.classList.add('hidden');          
+            scoreCoverElem.classList.add('hidden');
+            playLoosingGameAudio();          
         } 
         if (el.classList.contains('score-cover__btn_two')) {
             startBtn.classList.remove('hidden');
@@ -124,7 +141,8 @@ scoreCoverBtns.forEach((el) => {
             greetingWindow.classList.remove('hidden');
             greetingQuestion.classList.remove('hidden');
             greetingUser.classList.add('hidden');
-            audioWrapper.classList.add('hidden');            
+            audioWrapper.classList.add('hidden');
+            playLoosingGameAudio();          
             //userName.value = '';
         }
     });
@@ -204,7 +222,8 @@ const turn = (event) => {
 }
 
 startWrapper.addEventListener('click', () => {
-    playAudio();
+    playGameAudio();
+    //playLoosingGameAudio();  
     startBtn.classList.add('hidden');
     description.classList.add('hidden'); 
     scoreArea.classList.remove('hidden');

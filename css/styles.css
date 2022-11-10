@@ -20,6 +20,15 @@ ul{
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Clarendon';
+    src: local('Clarendon Regular'), local('Clarendon-Regular'),
+        url('../fonts/ClarendonLTStd.woff2') format('woff2'),
+        url('../fonts/ClarendonLTStd.woff') format('woff'),
+        url('../fonts/ClarendonLTStd.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 /* Fonts end */
 body {
     font-family: 'creepster';
@@ -242,16 +251,28 @@ body {
     width: 100%;
     height: 100%;
     position: absolute;
-    display: grid;
-    justify-items: center;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: 3rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    background-image: url(../images/bg-over.jpg);
+    background-color: rgba(0, 0, 0, 1);
+    /* background-image: url(../images/bg-over.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: cover; */
     z-index: 9;
+}
+.score-cover__text {
+    font-family: 'Clarendon';
+    font-size: 45px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 120px;
+}
+.score-cover__span {
+    display: block;
+    text-transform: uppercase;
 }
 .score-cover__over-text {
     animation: flashing 3s linear infinite;
@@ -262,13 +283,10 @@ body {
     100% { color: rgba(207, 21, 21, 1); }
 }
 .score-cover__inner {
-    width: 30%;
+    width: 560px;
     text-align: center;
     padding: 20px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     background-color: #fff;
     color: #974514;
     border: 2px solid #974514;
