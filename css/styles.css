@@ -47,8 +47,7 @@ body {
         300px,
         400px,
         2000px;
-    min-height: 100vh; 
-    cursor: url("../images/cursor.png"), auto;
+    min-height: 100vh;
 }
 .bg-animate {
     animation: 20s bg-animated infinite linear;
