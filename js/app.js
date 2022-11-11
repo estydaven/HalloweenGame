@@ -23,7 +23,7 @@ const playBtn = document.querySelector('.audio__icon');
 let isPlay = false;
 let level = 1;
 let speed = 200;
-let iterateList = [10, 20, 30, 40];
+let iterateList = [5, 10, 15, 20, 25, 30, 35];
 let ratingList = [];
 let iterations= 0;
 
@@ -94,7 +94,11 @@ const createEnemies = () => {
             if (iterations == iterateList[i]) {
                 level++;
                 levelElem.textContent = level;
-                speed = speed - 40;             
+                if (level <= 5 ) {
+                    speed = speed - 40; 
+                }  else {
+                    speed = speed - 10; 
+                }
             } 
         }
     }    
