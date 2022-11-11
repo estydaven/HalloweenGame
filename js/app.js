@@ -1,3 +1,4 @@
+const preloader = document.querySelector('.preloader');
 const wrapper = document.querySelector('.wrapper');
 const greetingWindow = document.querySelector('.greeting');
 const greetingQuestion = document.querySelector('.greeting__question');
@@ -26,6 +27,10 @@ let speed = 200;
 let iterateList = [5, 10, 15, 20, 25, 30, 35];
 let ratingList = [];
 let iterations= 0;
+
+window.addEventListener('load', () => {
+    preloader.classList.add('preloader_hidden');
+})
 
 function playGameAudio() {
     gamer.focus();
