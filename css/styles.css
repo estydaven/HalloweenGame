@@ -232,15 +232,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;   
+    max-width: 720px;   
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
 }
 .description {
     font-size: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    font-family: 'Clarendon';
+}
+.description__title {
+    text-align: center;
+    letter-spacing: 3px;
+    color: #e34646;
+    font-size: 60px;
 }
 .description__span {
     color: #e34646;
@@ -253,10 +260,24 @@ body {
     background-position:left top 3px;
     margin-bottom: 10px;
 }
+.description__btn {
+    margin-left: auto;
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: 'Clarendon';
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+.description__btn:hover {
+    color: #e34646;
+}
 .score-area, .start {
     font-size: 3rem;
-}
-  
+}  
 .start-btn {
     position: relative;
     width: 260px;

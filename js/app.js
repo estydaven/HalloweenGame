@@ -9,6 +9,7 @@ const textDanger = document.querySelector('.danger-text');
 const startWrapper = document.querySelector('#start-btn');
 const startBtn = document.querySelector('.start-btn');
 const description = document.querySelector('.description');
+const descriptionBtn = document.querySelector('.description__btn');
 const gamer = document.querySelector('#gamer');
 const gameArea = document.querySelector('#game-area');
 const scoreArea = document.querySelector('.score-area');
@@ -141,6 +142,7 @@ scoreCoverBtns.forEach((el) => {
             startBtn.classList.remove('hidden'); 
             description.classList.remove('hidden'); 
             scoreCoverElem.classList.add('hidden');
+            description.classList.add('hidden');
             playLoosingGameAudio();          
         } 
         if (el.classList.contains('score-cover__btn_two')) {
@@ -230,9 +232,8 @@ const turn = (event) => {
     }
 }
 
-startWrapper.addEventListener('click', () => {
-    playGameAudio();
-    //playLoosingGameAudio();  
+startBtn.addEventListener('click', () => {
+    playGameAudio(); 
     startBtn.classList.add('hidden');
     description.classList.add('hidden'); 
     scoreArea.classList.remove('hidden');
@@ -253,6 +254,11 @@ const resetGame = () => {
     scoreCoverElem.classList.add('hidden');
 }
 
+// function hideDescription() {
+//     description.classList.add('hidden');
+// }
+// descriptionBtn.addEventListener('click', hideDescription);
+
 function setLocalStorage() {
     localStorage.setItem('name', userName.value);
 }
@@ -260,7 +266,7 @@ window.addEventListener('beforeunload', setLocalStorage);
 
 function getLocalStorage() {
     if (localStorage.getItem('name')) {
-        userName.value = localStorage.getItem('name');
+        userName.value = localStorage.getItem('name');         
     }
 }
 window.addEventListener('load', getLocalStorage);
